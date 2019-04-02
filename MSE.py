@@ -3,7 +3,22 @@ import numpy as np
 
 class MSE(object):
     def forward(self, x, y):
-      return np.square(y.reshape(-1)-x.reshape(-1)).mean()
+        """
+        損失関数
+        :param x: <vector> 測定データ
+        :param y: <vector> 教師データ
+        :return: <vector> output
+        """
+
+        # return np.square(y.reshape(-1) - x.reshape(-1)).mean()
+        return np.square(y.reshape(-1) - x.reshape(-1))
 
     def backward(self, x, y):
-      return 2*(y.reshape(-1) - x.reshape(-1)).mean()
+        """
+        損失関数
+        :param x: <vector> 測定データ
+        :param y: <vector> 教師データ
+        :return: <vector>
+        """
+
+        return 2 * (y.reshape(-1) - x.reshape(-1)).mean()
