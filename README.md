@@ -1,3 +1,6 @@
-# ThreeLayerNetwork
+# NeuralNetwork
 
-This is Trainee Code.
+This is Trainee Code. Use Numpy Library(Not use Framework).
+
+Ref. 
+Ref. 
