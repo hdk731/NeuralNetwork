@@ -24,7 +24,7 @@ class ThreeLayerNetwork:
         self.daf = AF.derivative_sigmoid
 
     # 誤差逆伝搬
-    def backProp(self, idata, tdata):
+    def backprop(self, idata, tdata):
         # 縦ベクトルに変換
         o_i = np.array(idata, ndmin=2).T
         t = np.array(tdata, ndmin=2).T
@@ -46,7 +46,7 @@ class ThreeLayerNetwork:
         self.w_ih += self.lr * np.dot((e_h * self.daf(o_h)), o_i.T)
 
     # 順伝搬
-    def forwardProp(self, idata):
+    def forwardprop(self, idata):
         # 入力のリストを縦ベクトルに変換
         o_i = np.array(idata, ndmin=2).T
 
@@ -93,7 +93,7 @@ if __name__ == '__main__':
             idata = (np.asfarray(val[1:]) / 255.0 * 0.99) + 0.01
             tdata = np.zeros(onodes) + 0.01
             tdata[int(val[0])] = 0.99
-            nn.backProp(idata, tdata)
+            nn.backprop(idata, tdata)
             pass
         pass
 
@@ -103,7 +103,7 @@ if __name__ == '__main__':
         val = record.split(',')
         idata = (np.asfarray(val[1:]) / 255.0 * 0.99) + 0.01
         tlabel = int(val[0])
-        predict = nn.forwardProp(idata)
+        predict = nn.forwardprop(idata)
         plabel = np.argmax(predict)
         scoreboard.append(tlabel == plabel)
         pass

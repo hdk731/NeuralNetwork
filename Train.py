@@ -5,7 +5,7 @@ fc1 = nn(10, 5, 0.1)
 sig1 = sigmoid()
 fc2 = nn(5, 2, 0.1)
 sig2 = sigmoid()
-mse = MSE()
+mse = MSE
 x = np.random.randn(10) # 学習データ生成
 t = np.random.randn(2) # 教師データ生成
 for i in range(100):
