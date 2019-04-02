@@ -1,7 +1,7 @@
 import numpy as np
 
 
-class MSE(object):
+class MeanSquaredError(object):
     def forward(self, x, y):
         """
         損失関数
