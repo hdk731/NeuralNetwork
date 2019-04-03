@@ -10,8 +10,7 @@ class MeanSquaredError(object):
         :return: <vector> output
         """
 
-        # return np.square(y.reshape(-1) - x.reshape(-1)).mean()
-        return np.square(y.reshape(-1) - x.reshape(-1))
+        return np.square(y.reshape(-1) - x.reshape(-1)).mean()
 
     def backward(self, x, y):
         """
