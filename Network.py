@@ -33,7 +33,4 @@ class Network(object):
         return np.dot(dx.reshape(1, -1), self.weight)
 
     def update(self):
-        print(self.weight)
         self.weight -= self.grad * self.lr
-        print(self.weight)
-
